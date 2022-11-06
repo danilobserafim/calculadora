@@ -11,7 +11,8 @@ const Container = styled.div`
   gap: 32px;
   margin: 0 auto;
   background: black;
-  padding: 32px 16px;
+  padding: 16px;
+  border-radius: 10px;
 `
 const LineButtons = styled.div`
     display: flex;
@@ -33,7 +34,7 @@ export default function Calculadora() {
 
   return (
       <Container>
-            <Title>{result}</Title>
+            <Title>{result % 1 === 0?result:result.toFixed(2) }</Title>
 
             <Input value={(num1||num2) && num2 + operacao + num1} placeholder="0" />
             <div>
